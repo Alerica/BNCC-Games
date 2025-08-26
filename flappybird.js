@@ -30,7 +30,7 @@ let pipeY = 0;
 let topPipeImg, bottomPipeImg;
 
 // Physics
-let velocityX = -2;
+let velocityX = -4;
 let velocityY = 0;
 let gravity = 0.3;
 
@@ -190,3 +190,4 @@ function updateLeaderboard() {
         tbody.appendChild(row);
     });
 }
+
