@@ -1,0 +1,179 @@
+/* 
+======================================
+Project: Flappy Bird Clone
+Author: Alexander (github.com/Alerica)
+======================================
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #0065F8, #000000);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#layout {
+    display: grid;
+    grid-template-columns: 300px auto 350px; 
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+    max-width: 1400px;
+}
+
+#left-panel, #right-panel {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    min-width: 250px;
+    flex: 1;
+}
+
+#left-panel h2, #right-panel h2 {
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+#player-input input {
+    padding: 8px;
+    border: 2px solid #444;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 12px;
+}
+
+#start-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#start-btn:hover {
+    background: #219150;
+    transform: scale(1.05);
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+}
+
+#board {
+    background-image: url("./flappybirdbg.png");
+    background-size: cover;
+    border: 4px solid #222;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.4);
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 2 / 3; 
+}
+
+#retry-btn {
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #ff6b6b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+#retry-btn:hover {
+    background: #ff4757;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    font-size: 14px;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 6px 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+#leaderboard th {
+    text-align: left;
+    font-weight: bold;
+}
+
+#instructions, #about {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+#about a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    #layout {
+        grid-template-columns: 250px auto;
+        gap: 20px;
+    }
+    #right-panel {
+        display: none; 
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+    }
+    #layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    #left-panel, #right-panel {
+        min-width: auto;
+    }
+    #game-container {
+        order: -1; 
+    }
+}
+
+@media (max-width: 480px) {
+    #start-btn {
+        width: 100%;
+    }
+    #retry-btn {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+    #leaderboard {
+        font-size: 12px;
+    }
+}
